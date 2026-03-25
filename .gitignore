@@ -1,8 +1,8 @@
 # Large data files — too big for GitHub
-data/raw/
-data/cleaned/*.csv
-data/cleaned/*.png
-data/*.db
+# data/raw/
+# data/cleaned/*.csv
+# data/cleaned/*.png
+# data/*.db
 
 # Python cache
 __pycache__/
