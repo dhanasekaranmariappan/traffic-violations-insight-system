@@ -22,8 +22,8 @@ def clean_datetime(df):
         df['Time Of Stop'].astype(str).str.strip()
         .str.replace(r'\.', ':', regex=True)
     )
-    df['Hour']      = pd.to_datetime(df['Time Of Stop'],
-                        format='%H:%M:%S', errors='coerce').dt.hour
+    df['Hour'] = pd.to_datetime(df['Time Of Stop'],
+    format = '%H:%M:%S', errors='coerce').dt.hour
     df['Month']     = df['Date Of Stop'].dt.month
     df['DayOfWeek'] = df['Date Of Stop'].dt.day_name()
     df['Year_Stop'] = df['Date Of Stop'].dt.year
