@@ -129,7 +129,7 @@ Open `notebooks/dbcheck.ipynb` and run all cells.
 **7. Launch the dashboard**
 ```bash
 cd app
-streamlit run streamlit_app.py
+streamlit run traffic_violation_insight.py
 ```
 
 Open your browser at `http://localhost:8501` 🎉
