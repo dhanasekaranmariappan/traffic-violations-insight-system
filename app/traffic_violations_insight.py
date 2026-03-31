@@ -102,7 +102,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'traffic_violation.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'traffic_violations.db')
 
 # ─────────────────────────────────────────────
 # DATA LOADING
@@ -418,8 +418,7 @@ def show_map(df):
 
     col1, col2, col3 = st.columns(3)
     col1.metric("📍 Valid Coordinates", f"{len(map_df):,}")
-    col2.metric("💥 Accidents on Map",
-                f"{map_df['Accident'].sum():,.0f}")
+    col2.metric("💥 Accidents on Map", f"{map_df['Accident'].sum():,.1f}")
     col3.metric("🗺️ Sample Displayed", "50,000")
 
     st.markdown("<br>", unsafe_allow_html=True)
@@ -431,7 +430,7 @@ def show_map(df):
         horizontal=True
     )
 
-    sample = map_df.sample(min(50000, len(map_df)), random_state=42)
+    sample = map_df.sample(min(55000, len(map_df)), random_state=42)
 
     if "Density" in map_type:
         fig = px.density_mapbox(
@@ -457,8 +456,8 @@ def show_map(df):
         )
 
     fig.update_layout(
-        height=600,
-        margin=dict(l=0, r=0, t=40, b=0)
+        height=700,
+        margin=dict(l=0, r=0, t=40, b=10)
     )
     st.plotly_chart(fig, use_container_width=True)
 
