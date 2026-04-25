@@ -178,7 +178,6 @@ def build_sidebar(df):
         <div style='text-align:center; margin-top:20px;
                     color:#7f8c8d; font-size:0.75rem;'>
             Built with Python & Streamlit<br>
-            GUVI | HCL Project
         </div>
     """, unsafe_allow_html=True)
 
